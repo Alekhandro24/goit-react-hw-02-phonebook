@@ -17,15 +17,6 @@ export class App extends Component {
     number: '',
   };
 
-  componentDidMount() {
-    const contactsFromLocalStorage = localStorage.getItem('ContactListUl');
-    const parsedContacts = JSON.parse(contactsFromLocalStorage);
-
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
-    }
-  }
-
   componentDidUpdate(prevState) {
     const prevStateContacts = prevState.contacts;
     const nextStayContacts = this.state.contacts;
